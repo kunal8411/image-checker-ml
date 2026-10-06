@@ -1,0 +1,10 @@
+node_modules/
+dist/
+coverage/
+reports/*
+!reports/.gitkeep
+models/mobilenet/**
+!models/mobilenet/.gitkeep
+fixtures/*.png
+.DS_Store
+*.log

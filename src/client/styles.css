@@ -1,0 +1,305 @@
+:root {
+  color: #1d2430;
+  background: #efece4;
+  font-family: "Avenir Next", "Segoe UI", sans-serif;
+  line-height: 1.45;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+}
+
+button,
+input,
+select {
+  font: inherit;
+}
+
+:focus-visible {
+  outline: 2px solid #0c5c56;
+  outline-offset: 2px;
+}
+
+.page {
+  width: min(1120px, calc(100% - 32px));
+  margin: 0 auto;
+  padding: 32px 0 64px;
+}
+
+.hero h1,
+.controls h2,
+.panel h2,
+.region-card h3 {
+  font-family: Georgia, "Iowan Old Style", serif;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+
+.eyebrow {
+  margin: 0 0 8px;
+  color: #0c5c56;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.hero h1 {
+  margin: 0 0 8px;
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  line-height: 1.05;
+}
+
+.hero p,
+.panel-note,
+.empty-preview,
+.file-name,
+.source-label {
+  color: #5c6675;
+}
+
+.controls,
+.panel,
+.region-card,
+.preview {
+  background: #fbfaf7;
+  border: 1px solid #d9d3c7;
+  border-radius: 18px;
+}
+
+.controls {
+  display: grid;
+  gap: 16px;
+  margin: 24px 0;
+  padding: 20px;
+}
+
+.controls h2,
+.panel h2 {
+  margin: 0;
+}
+
+.uploader,
+.review-actions,
+.choice-row,
+.target {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  align-items: center;
+}
+
+.choice-row {
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+
+.choice-row legend,
+.target,
+.review label {
+  font-weight: 650;
+}
+
+.choice {
+  display: inline-flex;
+  gap: 8px;
+  align-items: center;
+  padding: 8px 12px;
+  border: 1px solid #d9d3c7;
+  border-radius: 999px;
+  background: #fff;
+}
+
+.choice.selected {
+  border-color: #0c5c56;
+  background: #e7f4f2;
+}
+
+.file-input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+}
+
+.button,
+.review button,
+.controls button {
+  border: 0;
+  border-radius: 999px;
+  padding: 10px 16px;
+  cursor: pointer;
+}
+
+.button.secondary,
+.review button {
+  background: #fff;
+  color: #1d2430;
+  border: 1px solid #d9d3c7;
+}
+
+.button.primary,
+.controls .button.primary {
+  background: #0c5c56;
+  color: #fbfaf7;
+}
+
+button:disabled {
+  cursor: not-allowed;
+  opacity: 0.55;
+}
+
+.target select,
+.review select {
+  margin-left: 8px;
+  padding: 8px 10px;
+  border: 1px solid #d9d3c7;
+  border-radius: 10px;
+  background: #fff;
+}
+
+.preview {
+  margin: 0 0 20px;
+  padding: 12px;
+}
+
+.preview img,
+.region-card img {
+  display: block;
+  width: 100%;
+  border-radius: 12px;
+  background: #e7e1d6;
+}
+
+.region-grid {
+  display: grid;
+  grid-template-columns: repeat(var(--cols, 3), minmax(0, 1fr));
+  gap: 14px;
+  margin: 18px 0;
+}
+
+.region-card {
+  display: grid;
+  gap: 10px;
+  padding: 12px;
+}
+
+.region-card.needs-review {
+  box-shadow: inset 0 0 0 2px #e0b15a;
+}
+
+.region-card.matches-target {
+  box-shadow: inset 0 0 0 2px #0c5c56;
+}
+
+.region-card h3,
+.prediction p,
+.review p {
+  margin: 0;
+}
+
+.prediction p,
+.review p {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.prediction p span,
+.review p span,
+.probabilities span,
+dt {
+  color: #5c6675;
+}
+
+.badge {
+  display: inline-flex;
+  width: fit-content;
+  padding: 4px 8px;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+}
+
+.badge-high { background: #e5f6ec; color: #1f7a4d; }
+.badge-uncertain { background: #fff4d8; color: #8a5a10; }
+.badge-low { background: #fde8e6; color: #a33b32; }
+
+.probabilities {
+  list-style: none;
+  margin: 8px 0 0;
+  padding: 0;
+  display: grid;
+  gap: 4px;
+  font-variant-numeric: tabular-nums;
+}
+
+.probabilities li {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.panel {
+  padding: 18px;
+  margin-top: 18px;
+}
+
+.panel dl {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
+  margin: 12px 0;
+}
+
+.panel dl div {
+  padding: 10px;
+  border-radius: 12px;
+  background: #f3efe6;
+}
+
+dd {
+  margin: 4px 0 0;
+  font-family: "IBM Plex Mono", ui-monospace, monospace;
+  font-size: 1.05rem;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 12px;
+}
+
+th,
+td {
+  padding: 8px;
+  border-bottom: 1px solid #e4ddd0;
+  text-align: left;
+}
+
+.matrix-wrap {
+  overflow-x: auto;
+}
+
+.error {
+  color: #a33b32;
+  font-weight: 650;
+}
+
+@media (max-width: 800px) {
+  .region-grid,
+  .panel dl {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 560px) {
+  .panel dl {
+    grid-template-columns: 1fr;
+  }
+}
